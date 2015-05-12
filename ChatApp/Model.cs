@@ -10,6 +10,8 @@ namespace ChatApp
     {
         //Member
         public string TextValue = "";
+        public string UserValue = "Lars";
+        public string SendValue = "";
 
         public delegate void ModelHasChanged(string newTextValue);
         public ModelHasChanged DelegateModelChange;
@@ -18,8 +20,10 @@ namespace ChatApp
         //Methoden
         public void UpdateModel(string viewText)
         {
-            this.TextValue = viewText;
-            DelegateModelChange(TextValue);
+            this.SendValue = UserValue;
+            this.SendValue += "  :  ";
+            this.SendValue += viewText;
+            DelegateModelChange(SendValue);
         }
 
 
