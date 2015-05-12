@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ChatApp
 {
     class Controller
@@ -12,13 +13,14 @@ namespace ChatApp
         //Member
         public View ContrView = new View();
         public Model ContrModel = new Model();
+        
+
 
         //Methoden
         public Controller()
         {
-            //ContrModel.TextValue = "Hallo";
             RegisterView(ContrView);
-
+            
             ContrModel.DelegateModelChange += this.WhenModelChanged;
 
             ContrView.Show();

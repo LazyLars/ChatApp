@@ -20,12 +20,12 @@ namespace ChatApp
         //Methoden
         public void UpdateModel(string viewText)
         {
-            this.SendValue = UserValue;
+            this.SendValue = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
+            this.SendValue += UserValue;
             this.SendValue += "  :  ";
             this.SendValue += viewText;
             DelegateModelChange(SendValue);
         }
-
 
     }
 }
