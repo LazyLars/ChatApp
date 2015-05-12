@@ -40,7 +40,7 @@
             this.Nachrichtenverlauf.Name = "Nachrichtenverlauf";
             this.Nachrichtenverlauf.Size = new System.Drawing.Size(460, 240);
             this.Nachrichtenverlauf.TabIndex = 0;
-            this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)";
+            this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)\n";
             // 
             // Eingabefeld
             // 
@@ -49,7 +49,7 @@
             this.Eingabefeld.Size = new System.Drawing.Size(340, 50);
             this.Eingabefeld.TabIndex = 1;
             this.Eingabefeld.Text = "Hier Text eingeben!";
-            this.Eingabefeld.TextChanged += new System.EventHandler(this.Eingabefeld_TextChanged);
+            this.Eingabefeld.GotFocus += new System.EventHandler(this.Eingabefeld_TextChanged);
             // 
             // Sendebutton
             // 
@@ -59,6 +59,7 @@
             this.Sendebutton.TabIndex = 2;
             this.Sendebutton.Text = "SENDEN";
             this.Sendebutton.UseVisualStyleBackColor = true;
+            this.Sendebutton.Click += new System.EventHandler(this.Sendebutton_Click);
             // 
             // Freundesliste
             // 

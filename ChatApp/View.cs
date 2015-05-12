@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace ChatApp
 {
+
     public partial class View : Form
     {
+        //Member
+        public string valText = "";
+
+        public delegate void ViewHasChanged(View callingView);
+        public ViewHasChanged DelegateViewHasChanged;
+        
+        //Methoden
         public View()
         {
             InitializeComponent();
+        }
+
+        public void SetNachrichtenVerlauf(string viewText)
+        {
+            Nachrichtenverlauf.Text += viewText;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,5 +39,13 @@ namespace ChatApp
         {
             this.Eingabefeld.Text = "";
         }
+
+        private void Sendebutton_Click(object sender, EventArgs e)
+        {
+            valText = this.Eingabefeld.Text;
+            valText += "\n";
+            DelegateViewHasChanged(this);
+        }
+
     }
 }
