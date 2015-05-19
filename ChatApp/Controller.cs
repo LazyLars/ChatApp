@@ -13,8 +13,9 @@ namespace ChatApp
         //Member
         public View ContrView = new View();
         public Model ContrModel = new Model();
-        
+        public DataBaseSQLite DataBase;
 
+        public string Datatest ="";
 
         //Methoden
         public Controller()
@@ -22,7 +23,7 @@ namespace ChatApp
             RegisterView(ContrView);
             
             ContrModel.DelegateModelChange += this.WhenModelChanged;
-
+            DataBase = new DataBaseSQLite("Data Source = DBChatApp.db3");
             ContrView.Show();
             Application.Run(ContrView);
         }
@@ -33,7 +34,15 @@ namespace ChatApp
         }
 
         private void WhenModelChanged(string viewString)
-        {
+        {   
+            /*  Test Datenbankanbindungund verfügbarkeit der Tabelle
+            DataBase.Open();
+            if (!DataBase.TableExists("Person"))
+            {
+                Datatest = "Datenbankverbindug!!!";
+                DataBase.Close();
+            }
+            ContrView.SetNachrichtenVerlauf(Datatest);*/
             ContrView.SetNachrichtenVerlauf(viewString);
         }
 
