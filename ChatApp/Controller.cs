@@ -37,11 +37,9 @@ namespace ChatApp
         {   
              // Test Datenbankanbindungund verfügbarkeit der Tabelle
             DataBase.Open();
-            if (DataBase.TableExists("Person"))
-            {
-                Datatest = "Datenbankverbindug!!!";
-            }
+            DataBase.TableExists("User");
             DataBase.Close();
+
             ContrView.SetNachrichtenVerlauf(Datatest);
             ContrView.SetNachrichtenVerlauf(viewString);
         }

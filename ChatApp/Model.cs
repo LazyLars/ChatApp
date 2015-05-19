@@ -11,7 +11,7 @@ namespace ChatApp
         //Member
         public string TextValue = "";
         public string UserValue = "Lars";
-        public string SendValue = "";
+        public string SendtoViewValue = "";
 
         public delegate void ModelHasChanged(string newTextValue);
         public ModelHasChanged DelegateModelChange;
@@ -20,11 +20,11 @@ namespace ChatApp
         //Methoden
         public void UpdateModel(string viewText)
         {
-            this.SendValue = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
-            this.SendValue += UserValue;
-            this.SendValue += "  :  ";
-            this.SendValue += viewText;
-            DelegateModelChange(SendValue);
+            this.SendtoViewValue = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
+            this.SendtoViewValue += UserValue;
+            this.SendtoViewValue += "  :  ";
+            this.SendtoViewValue += viewText;
+            DelegateModelChange(SendtoViewValue);
         }
 
     }
