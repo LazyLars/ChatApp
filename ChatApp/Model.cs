@@ -9,8 +9,10 @@ namespace ChatApp
     class Model
     {
         //Member
-        public string TextValue = "";
         public string UserValue = "Lars";
+        public List<string> Person = new List<string>();
+
+        public string TextValue = "";
         public string SendtoViewValue = "";
 
         public delegate void ModelHasChanged(string newTextValue);

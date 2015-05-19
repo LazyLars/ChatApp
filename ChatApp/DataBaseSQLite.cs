@@ -91,9 +91,37 @@ namespace ChatApp
         }
         public bool InsertData(string Tablename, string saveCol1 = "NULL", string saveCol2 = "NULL", string saveCol3 = "NULL", string saveCol4 = "NULL", string saveCol5 = "NULL")
         {
-            bool retVal = false;
-
-            return retVal;
+            if (connection != null)
+            {
+                SQLiteCommand sql_cmd = connection.CreateCommand();
+                if (TableExists(Tablename))
+                {
+                    switch (Tablename)
+                    { 
+                        case "Person":
+                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
+                            break;
+                        case "Nachricht":
+                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "','" + saveCol5 + "')";
+                            break;
+                        case "PersonHasNachricht":
+                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
+                            break;
+                        case "UserHasPerson":
+                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
+                            break;
+                        case "User":
+                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
+                            break;
+                    }
+                    
+                    sql_cmd.ExecuteNonQuery();
+                    return true;
+                }
+                
+                sql_cmd.Dispose();
+            }
+            return false;
         }
     }
 }

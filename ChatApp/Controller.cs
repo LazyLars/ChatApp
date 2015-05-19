@@ -35,13 +35,15 @@ namespace ChatApp
 
         private void WhenModelChanged(string viewString)
         {   
-             // Test Datenbankanbindungund verfügbarkeit der Tabelle
             DataBase.Open();
-            DataBase.TableExists("User");
+            if (DataBase.InsertData("User","2","Timm"))
+            {
+                Datatest = "Daten geschrieben";
+            }
             DataBase.Close();
 
             ContrView.SetNachrichtenVerlauf(Datatest);
-            ContrView.SetNachrichtenVerlauf(viewString);
+            //ContrView.SetNachrichtenVerlauf(viewString);
         }
 
         private void WhenViewChanged(View changeView)
