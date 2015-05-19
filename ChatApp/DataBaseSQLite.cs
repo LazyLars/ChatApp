@@ -12,17 +12,18 @@ namespace ChatApp
         //Member
         public string connectionString;
         public SQLiteConnection connection;
-        public List<List<string>> ResultList;
+        public List<List<string>> ResultList= new List<List<string>>();
         public int Rows;
         public int Cols; 
 
         //Methoden
         public DataBaseSQLite()
         {
-            ResultList = new List<List<string>>();
+            //ResultList = new List<List<string>>();
         }
         public DataBaseSQLite(string conString)
         {
+            //ResultList = new List<List<string>>();
             connectionString = conString;
         }
         public bool Open()
@@ -43,11 +44,11 @@ namespace ChatApp
         {
             connection.Close();
         }
-        public bool TableExists(string strTabelName)
+        public bool TableExists(string strTableName)
         {
             String strCommand;
-            ResultList = new List<List<string>>();
-            strCommand = "SELECT count(name) FROM sqlite_master WHERE type='table' and name='" + strTabelName + "'";
+            strCommand = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' and name='"+strTableName+"'";
+ 
             Execute(strCommand);
 
             if (ResultList[0][0] == "1")
@@ -59,9 +60,9 @@ namespace ChatApp
         {
             bool retVal = false;
 
-            SQLiteCommand cmdBase = connection.CreateCommand();
-            cmdBase.CommandText = strCommand;
-            SQLiteDataReader reader = cmdBase.ExecuteReader();
+            SQLiteCommand cmdSQLite = connection.CreateCommand();
+            cmdSQLite.CommandText = strCommand;
+            SQLiteDataReader reader = cmdSQLite.ExecuteReader();
 
             ResultList.Clear();
             Rows = 0;
@@ -85,7 +86,7 @@ namespace ChatApp
             // Beenden des Readers und Freigabe aller Ressourcen.
             reader.Close();
             reader.Dispose();
-            cmdBase.Dispose();
+            cmdSQLite.Dispose();
             return retVal;
         }
         public bool InsertData(string Tablename, string saveCol1 = "NULL", string saveCol2 = "NULL", string saveCol3 = "NULL", string saveCol4 = "NULL", string saveCol5 = "NULL")
