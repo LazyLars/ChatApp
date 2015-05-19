@@ -12,18 +12,18 @@ namespace ChatApp
         //Member
         public string connectionString;
         public SQLiteConnection connection;
-        public List<List<string>> ResultList= new List<List<string>>();
+        public List<List<string>> ResultList;
         public int Rows;
         public int Cols; 
 
         //Methoden
         public DataBaseSQLite()
         {
-            //ResultList = new List<List<string>>();
+            ResultList = new List<List<string>>();
         }
         public DataBaseSQLite(string conString)
         {
-            //ResultList = new List<List<string>>();
+            ResultList = new List<List<string>>();
             connectionString = conString;
         }
         public bool Open()
