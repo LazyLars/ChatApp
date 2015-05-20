@@ -14,18 +14,29 @@ namespace ChatApp
 
         public string TextValue = "";
         public string SendtoViewValue = "";
+        public string Timestemp = "";
 
         public delegate void ModelHasChanged(string newTextValue);
         public ModelHasChanged DelegateModelChange;
 
+        public delegate void ModeltoDatabase(string Time, string Absender, string Empfaenger, string Text);
+        public ModeltoDatabase DelegateWriteToDatabase;
+
 
         //Methoden
+        public Model ()
+        {
+            Person.Add("Dummy");
+        }
+
         public void UpdateModel(string viewText)
         {
-            this.SendtoViewValue = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
+            Timestemp = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
+            this.SendtoViewValue = Timestemp;
             this.SendtoViewValue += UserValue;
             this.SendtoViewValue += "  :  ";
             this.SendtoViewValue += viewText;
+            DelegateWriteToDatabase(Timestemp, UserValue,Person[0],viewText); 
             DelegateModelChange(SendtoViewValue);
         }
 

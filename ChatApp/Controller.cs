@@ -23,6 +23,7 @@ namespace ChatApp
             RegisterView(ContrView);
             
             ContrModel.DelegateModelChange += this.WhenModelChanged;
+            ContrModel.DelegateWriteToDatabase += this.WriteinDB;
             DataBase = new DataBaseSQLite("Data Source = DBChatApp.db3");
             ContrView.Show();
             Application.Run(ContrView);
@@ -35,20 +36,22 @@ namespace ChatApp
 
         private void WhenModelChanged(string viewString)
         {   
-            DataBase.Open();
-            if (DataBase.InsertData("User","2","Timm"))
-            {
-                Datatest = "Daten geschrieben";
-            }
-            DataBase.Close();
-
-            ContrView.SetNachrichtenVerlauf(Datatest);
-            //ContrView.SetNachrichtenVerlauf(viewString);
+            ContrView.SetNachrichtenVerlauf(viewString);
         }
 
         private void WhenViewChanged(View changeView)
         {
             ContrModel.UpdateModel(ContrView.valText);
+        }
+        public void WriteinDB(string Time, string Absender, string Empfaenger, string Text)
+        {
+            DataBase.Open();
+            if (!DataBase.InsertData("Nachricht", Time, Absender, Empfaenger, Text))
+            {
+                ContrView.SetNachrichtenVerlauf("Datenbank erfolgreichbeschrieben\n");
+            }
+            
+            DataBase.Close();
         }
     }
 }

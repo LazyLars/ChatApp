@@ -42,10 +42,29 @@ namespace ChatApp
 
         private void Sendebutton_Click(object sender, EventArgs e)
         {
-            valText = this.Eingabefeld.Text;
-            valText += "\n";
-            DelegateViewHasChanged(this);
+            if (this.Eingabefeld.Text != "")
+            {
+                valText = this.Eingabefeld.Text;
+                valText += "\n";
+                DelegateViewHasChanged(this);
+                this.Eingabefeld.Text = "";
+            }
         }
+
+        private void Eingabefeld_PreviewKeyDown_1(object sender, PreviewKeyDownEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return) && e.Control)
+            {
+                if (this.Eingabefeld.Text != "")
+                {
+                    valText = this.Eingabefeld.Text;
+                    valText += "\n";
+                    DelegateViewHasChanged(this);
+                    this.Eingabefeld.Text = "";
+                }
+            }
+        }
+
 
     }
 }

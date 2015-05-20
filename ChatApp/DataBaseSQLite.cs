@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using System.Data.SQLite;
 
 namespace ChatApp
@@ -14,7 +14,7 @@ namespace ChatApp
         public SQLiteConnection connection;
         public List<List<string>> ResultList;
         public int Rows;
-        public int Cols; 
+        public int Cols;
 
         //Methoden
         public DataBaseSQLite()
@@ -47,8 +47,8 @@ namespace ChatApp
         public bool TableExists(string strTableName)
         {
             String strCommand;
-            strCommand = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' and name='"+strTableName+"'";
- 
+            strCommand = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' and name='" + strTableName + "'";
+
             Execute(strCommand);
 
             if (ResultList[0][0] == "1")
@@ -96,32 +96,44 @@ namespace ChatApp
                 SQLiteCommand sql_cmd = connection.CreateCommand();
                 if (TableExists(Tablename))
                 {
-                    switch (Tablename)
-                    { 
-                        case "Person":
-                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
-                            break;
-                        case "Nachricht":
-                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "','" + saveCol5 + "')";
-                            break;
-                        case "PersonHasNachricht":
-                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
-                            break;
-                        case "UserHasPerson":
-                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
-                            break;
-                        case "User":
-                            sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
-                            break;
+                    try
+                    {
+                        switch (Tablename)
+                        {
+                            case "Person":
+                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
+                                sql_cmd.ExecuteNonQuery();
+                                break;
+                            case "Nachricht":
+                                sql_cmd.CommandText = "insert into " + Tablename + " values (NULL,'" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
+                                sql_cmd.ExecuteNonQuery();
+                                break;
+                            case "PersonHasNachricht":
+                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
+                                sql_cmd.ExecuteNonQuery();
+                                break;
+                            case "UserHasPerson":
+                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
+                                sql_cmd.ExecuteNonQuery();
+                                break;
+                            case "User":
+                                sql_cmd.CommandText = "insert into " + Tablename + "(IdPerson,Passwort) SELECT IdPerson,'" + saveCol2 + "' FROM Person WHERE Name = '" + saveCol1 + "'";
+                                sql_cmd.ExecuteNonQuery();
+                                break;
+                        }
+                        
                     }
-                    
-                    sql_cmd.ExecuteNonQuery();
-                    return true;
+                    catch
+                    {
+                        sql_cmd.Dispose();
+                        return false;
+                    }
+
                 }
-                
+
                 sql_cmd.Dispose();
             }
-            return false;
+            return true;
         }
     }
 }

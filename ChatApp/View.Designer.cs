@@ -50,6 +50,7 @@
             this.Eingabefeld.TabIndex = 1;
             this.Eingabefeld.Text = "Hier Text eingeben!";
             this.Eingabefeld.GotFocus += new System.EventHandler(this.Eingabefeld_TextChanged);
+            this.Eingabefeld.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Eingabefeld_PreviewKeyDown_1);
             // 
             // Sendebutton
             // 
