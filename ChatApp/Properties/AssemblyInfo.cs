@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("ChatApp")]
+[assembly: AssemblyTitle("ChatApp_Schule")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ChatApp")]
+[assembly: AssemblyProduct("ChatApp_Schule")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("7f63ff1f-e6f7-4e67-ba60-e319ec805b53")]
+[assembly: Guid("0c67a001-a031-4ae2-b1bb-3f87b9f5761b")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //

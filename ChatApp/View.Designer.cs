@@ -38,6 +38,7 @@
             // 
             this.Nachrichtenverlauf.Location = new System.Drawing.Point(16, 16);
             this.Nachrichtenverlauf.Name = "Nachrichtenverlauf";
+            this.Nachrichtenverlauf.ReadOnly = true;
             this.Nachrichtenverlauf.Size = new System.Drawing.Size(460, 240);
             this.Nachrichtenverlauf.TabIndex = 0;
             this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)\n";
