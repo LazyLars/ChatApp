@@ -18,7 +18,7 @@ namespace ChatApp
 
         public delegate void ViewHasChanged(View callingView);
         public ViewHasChanged DelegateViewHasChanged;
-        
+
         //Methoden
         public View()
         {
@@ -45,7 +45,6 @@ namespace ChatApp
             if (this.Eingabefeld.Text != "")
             {
                 valText = this.Eingabefeld.Text;
-                valText += "\n";
                 DelegateViewHasChanged(this);
                 this.Eingabefeld.Text = "";
             }
@@ -58,12 +57,15 @@ namespace ChatApp
                 if (this.Eingabefeld.Text != "")
                 {
                     valText = this.Eingabefeld.Text;
-                    valText += "\n";
                     DelegateViewHasChanged(this);
                     this.Eingabefeld.Text = "";
                 }
+                
             }
+
         }
+
+        
 
 
     }

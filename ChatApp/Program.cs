@@ -18,7 +18,7 @@ namespace ChatApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Controller ctrl = new Controller();
-            
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ChatApp
 
 
         //Methoden
-        public Model ()
+        public Model()
         {
             Person.Add("Dummy");
         }
@@ -36,8 +36,10 @@ namespace ChatApp
             this.SendtoViewValue += UserValue;
             this.SendtoViewValue += "  :  ";
             this.SendtoViewValue += viewText;
-            DelegateWriteToDatabase(Timestemp, UserValue,Person[0],viewText); 
+            DelegateWriteToDatabase(Timestemp, UserValue, Person[0], viewText);
+            this.SendtoViewValue += "\n";
             DelegateModelChange(SendtoViewValue);
+            
         }
 
     }

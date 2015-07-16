@@ -7,14 +7,11 @@ using System.Data.SQLite;
 
 namespace ChatApp
 {
-    class DataBaseSQLite
+    class DataBaseSQLite : DataBase
     {
         //Member
-        public string connectionString;
         public SQLiteConnection connection;
-        public List<List<string>> ResultList;
-        public int Rows;
-        public int Cols;
+
 
         //Methoden
         public DataBaseSQLite()
@@ -26,7 +23,7 @@ namespace ChatApp
             ResultList = new List<List<string>>();
             connectionString = conString;
         }
-        public bool Open()
+        public override bool Open()
         {
             bool retVal = false;
             if (connectionString.Length > 0)
@@ -35,16 +32,18 @@ namespace ChatApp
                 if (connection != null)
                 {
                     connection.Open();
+
+                    
                     retVal = true;
                 }
             }
             return retVal;
         }
-        public void Close()
+        public override void Close()
         {
             connection.Close();
         }
-        public bool TableExists(string strTableName)
+        public override bool TableExists(string strTableName)
         {
             String strCommand;
             strCommand = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' and name='" + strTableName + "'";
@@ -56,7 +55,7 @@ namespace ChatApp
             else
                 return false;
         }
-        public bool Execute(string strCommand)
+        public override bool Execute(string strCommand)
         {
             bool retVal = false;
 
@@ -89,51 +88,6 @@ namespace ChatApp
             cmdSQLite.Dispose();
             return retVal;
         }
-        public bool InsertData(string Tablename, string saveCol1 = "NULL", string saveCol2 = "NULL", string saveCol3 = "NULL", string saveCol4 = "NULL", string saveCol5 = "NULL")
-        {
-            if (connection != null)
-            {
-                SQLiteCommand sql_cmd = connection.CreateCommand();
-                if (TableExists(Tablename))
-                {
-                    try
-                    {
-                        switch (Tablename)
-                        {
-                            case "Person":
-                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
-                                sql_cmd.ExecuteNonQuery();
-                                break;
-                            case "Nachricht":
-                                sql_cmd.CommandText = "insert into " + Tablename + " values (NULL,'" + saveCol1 + "','" + saveCol2 + "','" + saveCol3 + "','" + saveCol4 + "')";
-                                sql_cmd.ExecuteNonQuery();
-                                break;
-                            case "PersonHasNachricht":
-                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
-                                sql_cmd.ExecuteNonQuery();
-                                break;
-                            case "UserHasPerson":
-                                sql_cmd.CommandText = "insert into'" + Tablename + "' values ('" + saveCol1 + "','" + saveCol2 + "')";
-                                sql_cmd.ExecuteNonQuery();
-                                break;
-                            case "User":
-                                sql_cmd.CommandText = "insert into " + Tablename + "(IdPerson,Passwort) SELECT IdPerson,'" + saveCol2 + "' FROM Person WHERE Name = '" + saveCol1 + "'";
-                                sql_cmd.ExecuteNonQuery();
-                                break;
-                        }
-                        
-                    }
-                    catch
-                    {
-                        sql_cmd.Dispose();
-                        return false;
-                    }
-
-                }
-
-                sql_cmd.Dispose();
-            }
-            return true;
-        }
+        
     }
 }
