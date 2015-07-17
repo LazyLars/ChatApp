@@ -82,7 +82,6 @@
             this.Controls.Add(this.Nachrichtenverlauf);
             this.Name = "View";
             this.Text = "ChatApp";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
