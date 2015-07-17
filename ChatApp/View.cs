@@ -30,11 +30,6 @@ namespace ChatApp
             Nachrichtenverlauf.Text += viewText;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Eingabefeld_TextChanged(object sender, EventArgs e)
         {
             this.Eingabefeld.Text = "";
@@ -64,9 +59,6 @@ namespace ChatApp
             }
 
         }
-
-        
-
 
     }
 }
