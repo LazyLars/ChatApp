@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controler.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="ControllerLogin.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="DataBaseSQLite.cs" />
     <Compile Include="LoginView.cs">
