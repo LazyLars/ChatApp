@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatApp\ChatApp.csproj", "{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatApp\ChatApp.csproj", "{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,12 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55EF88A1-7374-4BF5-A97F-6FA4B7BCC67A}.Release|x86.ActiveCfg = Release|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5354BB1E-68C5-4ABA-8B0A-FCD6326BF169}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

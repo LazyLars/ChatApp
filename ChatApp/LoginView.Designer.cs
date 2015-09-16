@@ -1,4 +1,4 @@
-﻿namespace ChatApp_Schule
+﻿namespace ChatApp
 {
     partial class LoginView
     {
@@ -28,42 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.BenutzernameTextbox = new System.Windows.Forms.RichTextBox();
+            this.PasswortTextbox = new System.Windows.Forms.RichTextBox();
+            this.BenutzernameLoginLabel = new System.Windows.Forms.Label();
+            this.PasswortLoginLabel = new System.Windows.Forms.Label();
+            this.SendeLoginButton = new System.Windows.Forms.Button();
+            this.SendeRegistrierungButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // BenutzernameTextbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(47, 40);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(171, 18);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.BenutzernameTextbox.Location = new System.Drawing.Point(47, 40);
+            this.BenutzernameTextbox.Name = "BenutzernameTextbox";
+            this.BenutzernameTextbox.Size = new System.Drawing.Size(171, 18);
+            this.BenutzernameTextbox.TabIndex = 0;
+            this.BenutzernameTextbox.Text = "";
             // 
-            // richTextBox2
+            // PasswortTextbox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(47, 78);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(171, 18);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
+            this.PasswortTextbox.Location = new System.Drawing.Point(47, 77);
+            this.PasswortTextbox.Name = "PasswortTextbox";
+            this.PasswortTextbox.Size = new System.Drawing.Size(171, 18);
+            this.PasswortTextbox.TabIndex = 1;
+            this.PasswortTextbox.Text = "";
+            // 
+            // BenutzernameLoginLabel
+            // 
+            this.BenutzernameLoginLabel.AutoSize = true;
+            this.BenutzernameLoginLabel.Location = new System.Drawing.Point(44, 24);
+            this.BenutzernameLoginLabel.Name = "BenutzernameLoginLabel";
+            this.BenutzernameLoginLabel.Size = new System.Drawing.Size(81, 13);
+            this.BenutzernameLoginLabel.TabIndex = 2;
+            this.BenutzernameLoginLabel.Text = "Benutzername :";
+            this.BenutzernameLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PasswortLoginLabel
+            // 
+            this.PasswortLoginLabel.AutoSize = true;
+            this.PasswortLoginLabel.Location = new System.Drawing.Point(44, 61);
+            this.PasswortLoginLabel.Name = "PasswortLoginLabel";
+            this.PasswortLoginLabel.Size = new System.Drawing.Size(56, 13);
+            this.PasswortLoginLabel.TabIndex = 3;
+            this.PasswortLoginLabel.Text = "Passwort :";
+            this.PasswortLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // SendeLoginButton
+            // 
+            this.SendeLoginButton.Location = new System.Drawing.Point(164, 111);
+            this.SendeLoginButton.Name = "SendeLoginButton";
+            this.SendeLoginButton.Size = new System.Drawing.Size(75, 23);
+            this.SendeLoginButton.TabIndex = 4;
+            this.SendeLoginButton.Text = "Login";
+            this.SendeLoginButton.UseVisualStyleBackColor = true;
+            this.SendeLoginButton.Click += new System.EventHandler(this.SendeLoginButton_Click);
+            // 
+            // SendeRegistrierungButton
+            // 
+            this.SendeRegistrierungButton.Location = new System.Drawing.Point(47, 111);
+            this.SendeRegistrierungButton.Name = "SendeRegistrierungButton";
+            this.SendeRegistrierungButton.Size = new System.Drawing.Size(75, 23);
+            this.SendeRegistrierungButton.TabIndex = 5;
+            this.SendeRegistrierungButton.Text = "Registrieren";
+            this.SendeRegistrierungButton.UseVisualStyleBackColor = true;
+            this.SendeRegistrierungButton.Click += new System.EventHandler(this.SendeRegistrierungButton_Click);
             // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(284, 159);
+            this.Controls.Add(this.SendeRegistrierungButton);
+            this.Controls.Add(this.SendeLoginButton);
+            this.Controls.Add(this.PasswortLoginLabel);
+            this.Controls.Add(this.BenutzernameLoginLabel);
+            this.Controls.Add(this.PasswortTextbox);
+            this.Controls.Add(this.BenutzernameTextbox);
             this.Name = "LoginView";
             this.Text = "LoginView";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox BenutzernameTextbox;
+        private System.Windows.Forms.RichTextBox PasswortTextbox;
+        private System.Windows.Forms.Label BenutzernameLoginLabel;
+        private System.Windows.Forms.Label PasswortLoginLabel;
+        private System.Windows.Forms.Button SendeLoginButton;
+        private System.Windows.Forms.Button SendeRegistrierungButton;
     }
 }
