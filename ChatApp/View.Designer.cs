@@ -26,12 +26,13 @@
         /// Erforderliche Methode für die Designerunterstützung.
         /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.Nachrichtenverlauf = new System.Windows.Forms.RichTextBox();
             this.Eingabefeld = new System.Windows.Forms.RichTextBox();
             this.Sendebutton = new System.Windows.Forms.Button();
             this.Freundesliste = new System.Windows.Forms.ListBox();
+            this.StartListenerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nachrichtenverlauf
@@ -39,6 +40,7 @@
             this.Nachrichtenverlauf.Location = new System.Drawing.Point(16, 16);
             this.Nachrichtenverlauf.Name = "Nachrichtenverlauf";
             this.Nachrichtenverlauf.ReadOnly = true;
+            this.Nachrichtenverlauf.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.Nachrichtenverlauf.Size = new System.Drawing.Size(460, 240);
             this.Nachrichtenverlauf.TabIndex = 0;
             this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)\n";
@@ -68,20 +70,32 @@
             this.Freundesliste.FormattingEnabled = true;
             this.Freundesliste.Location = new System.Drawing.Point(529, 16);
             this.Freundesliste.Name = "Freundesliste";
-            this.Freundesliste.Size = new System.Drawing.Size(163, 433);
+            this.Freundesliste.Size = new System.Drawing.Size(163, 329);
             this.Freundesliste.TabIndex = 3;
+            // 
+            // StartListenerButton
+            // 
+            this.StartListenerButton.Location = new System.Drawing.Point(358, 262);
+            this.StartListenerButton.Name = "StartListenerButton";
+            this.StartListenerButton.Size = new System.Drawing.Size(117, 24);
+            this.StartListenerButton.TabIndex = 4;
+            this.StartListenerButton.Text = "Start Listener";
+            this.StartListenerButton.UseVisualStyleBackColor = true;
+            this.StartListenerButton.Click += new System.EventHandler(this.StartListener_Click);
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 465);
+            this.ClientSize = new System.Drawing.Size(704, 359);
+            this.Controls.Add(this.StartListenerButton);
             this.Controls.Add(this.Freundesliste);
             this.Controls.Add(this.Sendebutton);
             this.Controls.Add(this.Eingabefeld);
             this.Controls.Add(this.Nachrichtenverlauf);
             this.Name = "View";
             this.Text = "ChatApp";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -92,6 +106,7 @@
         private System.Windows.Forms.RichTextBox Eingabefeld;
         private System.Windows.Forms.Button Sendebutton;
         private System.Windows.Forms.ListBox Freundesliste;
+        private System.Windows.Forms.Button StartListenerButton;
     }
 }
 

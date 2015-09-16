@@ -17,8 +17,7 @@ namespace ChatApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Controller ctrl = new Controller();
-            Application.Run(new LoginView());
+            Controller ctrl = new Controller();
 
         }
     }

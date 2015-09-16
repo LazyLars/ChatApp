@@ -15,6 +15,10 @@ namespace ChatApp
         public int Cols;
 
         //Methoden
+        //
+        //Klassenmethoden werden vererbt und sind funktional in der Kindklasse zu finden.
+        //Methoden sind hier definiert, da diese umbedingt benötigt werden um eine DB Anbindung und Nutzung zu schaffen
+        //
         public DataBase() { ResultList = new List<List<string>>(); }
         public DataBase(string connectionString) { }
 

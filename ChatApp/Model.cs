@@ -1,46 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChatApp
-{
-    class Model
-    {
-        //Member
-        public string UserValue = "Lars";
-        public List<string> Person = new List<string>();
-
-        public string TextValue = "";
-        public string SendtoViewValue = "";
-        public string Timestemp = "";
-
-        public delegate void ModelHasChanged(string newTextValue);
-        public ModelHasChanged DelegateModelChange;
-
-        public delegate void ModeltoDatabase(string Time, string Absender, string Empfaenger, string Text);
-        public ModeltoDatabase DelegateWriteToDatabase;
+﻿//using system;
+//using system.collections.generic;
+//using system.linq;
+//using system.text;
+//using system.threading.tasks;
 
 
-        //Methoden
-        public Model()
-        {
-            Person.Add("Dummy");
-        }
+        
+//        Wird nicht mehr benötigt
+        
 
-        public void UpdateModel(string viewText)
-        {
-            Timestemp = DateTime.Now.ToString("dd-MM-yy [HH:mm:ss]  ");
-            this.SendtoViewValue = Timestemp;
-            this.SendtoViewValue += UserValue;
-            this.SendtoViewValue += "  :  ";
-            this.SendtoViewValue += viewText;
-            DelegateWriteToDatabase(Timestemp, UserValue, Person[0], viewText);
-            this.SendtoViewValue += "\n";
-            DelegateModelChange(SendtoViewValue);
-            
-        }
 
-    }
-}
+
+
+//namespace chatapp
+//{
+//    class model
+//    {
+//        //member
+//        public string uservalue = "lars";
+//        public list<string> person = new list<string>();
+
+//        public string type = "msg";
+//        public string textvalue = "";
+//        public string sendtoviewvalue = "";
+//        public string timestemp = "";
+
+//        public delegate void modelhaschanged(string newtextvalue, string type, string content, string userfrom, string userto);
+//        public modelhaschanged delegatemodelchange;
+
+//        public delegate void modeltodatabase(string time, string absender, string empfaenger, string text);
+//        public modeltodatabase delegatewritetodatabase;
+
+//        public delegate void modeltosentmessage(string type, string content, string userfrom, string userto);
+//        public modeltosentmessage delegatebuiltmessage;
+
+
+//        //methoden
+//        public model()
+//        {
+//            person.add("dummy");
+//        }
+        
+//        public void updatemodel(string viewtext)
+//        {
+//            timestemp = datetime.now.tostring("dd-mm-yy [hh:mm:ss]  ");
+//            this.sendtoviewvalue = timestemp;
+//            this.sendtoviewvalue += uservalue;
+//            this.sendtoviewvalue += "  :  ";
+//            this.sendtoviewvalue += viewtext;
+//            delegatewritetodatabase(timestemp, uservalue, person[0], viewtext);
+//            //delegatebuiltmessage(type, viewtext, uservalue, "pascal");
+//            this.sendtoviewvalue += "\n";
+//            delegatemodelchange(sendtoviewvalue, type, viewtext, uservalue, "10.2.23.14");
+//        }
+
+//    }
+//}

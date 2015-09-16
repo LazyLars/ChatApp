@@ -1,4 +1,4 @@
-﻿namespace ChatApp
+﻿namespace ChatApp_Schule
 {
     partial class LoginView
     {
@@ -28,58 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserFeld = new System.Windows.Forms.RichTextBox();
-            this.PasswortFeld = new System.Windows.Forms.RichTextBox();
-            this.Einloggen = new System.Windows.Forms.Button();
-            this.UserAnlegen = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // UserFeld
+            // richTextBox1
             // 
-            this.UserFeld.Location = new System.Drawing.Point(47, 40);
-            this.UserFeld.Name = "UserFeld";
-            this.UserFeld.Size = new System.Drawing.Size(171, 18);
-            this.UserFeld.TabIndex = 0;
-            this.UserFeld.Text = "Username";
-            this.UserFeld.Enter += new System.EventHandler(this.UserFeld_TextChanged);
+            this.richTextBox1.Location = new System.Drawing.Point(47, 40);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(171, 18);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
-            // PasswortFeld
+            // richTextBox2
             // 
-            this.PasswortFeld.Location = new System.Drawing.Point(47, 78);
-            this.PasswortFeld.Name = "PasswortFeld";
-            this.PasswortFeld.Size = new System.Drawing.Size(171, 18);
-            this.PasswortFeld.TabIndex = 1;
-            this.PasswortFeld.Text = "Password";
-            this.PasswortFeld.Enter += new System.EventHandler(this.PasswortFeld_TextChanged);
-            // 
-            // Einloggen
-            // 
-            this.Einloggen.Location = new System.Drawing.Point(142, 103);
-            this.Einloggen.Name = "Einloggen";
-            this.Einloggen.Size = new System.Drawing.Size(75, 23);
-            this.Einloggen.TabIndex = 2;
-            this.Einloggen.Text = "Einloggen";
-            this.Einloggen.UseVisualStyleBackColor = true;
-            this.Einloggen.Click += new System.EventHandler(this.Einloggen_Click);
-            // 
-            // UserAnlegen
-            // 
-            this.UserAnlegen.Location = new System.Drawing.Point(47, 103);
-            this.UserAnlegen.Name = "UserAnlegen";
-            this.UserAnlegen.Size = new System.Drawing.Size(75, 23);
-            this.UserAnlegen.TabIndex = 3;
-            this.UserAnlegen.Text = "Anlegen";
-            this.UserAnlegen.UseVisualStyleBackColor = true;
+            this.richTextBox2.Location = new System.Drawing.Point(47, 78);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(171, 18);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "";
             // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.UserAnlegen);
-            this.Controls.Add(this.Einloggen);
-            this.Controls.Add(this.PasswortFeld);
-            this.Controls.Add(this.UserFeld);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Name = "LoginView";
             this.Text = "LoginView";
             this.ResumeLayout(false);
@@ -88,9 +63,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox UserFeld;
-        private System.Windows.Forms.RichTextBox PasswortFeld;
-        private System.Windows.Forms.Button Einloggen;
-        private System.Windows.Forms.Button UserAnlegen;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
