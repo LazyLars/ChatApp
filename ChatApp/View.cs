@@ -17,6 +17,7 @@ namespace ChatApp
     {
         //Member
         public string valText = "";     //Speichert string für weitere Verwendung -> mehrfachnutzung
+        public string IpAdress;
 
         public delegate void ViewHasChanged(View callingView);      //Delegat zum Controller zur Bearbeitung der View
         public ViewHasChanged DelegateViewHasChanged;               //Inzialisierung des Delegaten 
@@ -44,11 +45,7 @@ namespace ChatApp
             StartListenerButton.Text = ListenerButtonText;      //Schreibt neuen String in Textfeld
             return OldListenerText;                             //gibt String als return an
         }
-        //Funktionsloser Eventhandler
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         //Eventhandling zum Zurücksetzen des Eingabefeldes 
         //!!!!
         //Funtioniert nicht wie gedacht! Manuell in Sendebutton_Click ebenfalls fehlerhaft
@@ -62,9 +59,11 @@ namespace ChatApp
         {
             if (this.Eingabefeld.Text != "")           //Eingabefeld leer?
             {
+                this.IpAdress = this.IpTextbox.Text;
                 valText = this.Eingabefeld.Text;       //Text Eingabefeld wird in string gespeichert
                 DelegateViewHasChanged(this);          //Aufruf Delegate Veränderung View 
                 this.Eingabefeld.Text = "";            //Text Eingabefeld wird leer gesetzt
+                
                 //funktioniert wie Methode nicht
             }
         }
@@ -77,33 +76,33 @@ namespace ChatApp
                 if (this.Eingabefeld.Text != "")    //Textfeld leer?
                 {
                     valText = this.Eingabefeld.Text;       //Text Eingabefeld wird in string gespeichert
+                    this.IpAdress = this.IpTextbox.Text;
                     DelegateViewHasChanged(this);          //Aufruf Delegate Veränderung View 
                     this.Eingabefeld.Text = "";            //Text Eingabefeld wird leer gesetzt
                     //funktioniert wie Methode nicht
                 }
             }
         }
+
         //Eventhandling zum starten des Listeners
         private void StartListener_Click(object sender, EventArgs e)
         {
             StartTcpListener(this);         //Aufruf des Delegaten für den TCPListener
         }
+
         //Invoke-Methode zum Threadübergreifenden Verändern des Nachrichtenverlaufes
         public void AddMessageFromClient(string input)
         {
             if (Nachrichtenverlauf.InvokeRequired)      //Prüfung auf Änderungsanfrage des Threads im Mainthread
             {
-                //Nachrichtenverlauf will ändern erneuter aufruf der Methode
+                //Nachrichtenverlauf will ändern erneuter Aufruf der Methode
                 Nachrichtenverlauf.Invoke((MethodInvoker)(() => AddMessageFromClient(input)));
             }
             else        //Tritt ein wenn Invoke auf Nachrichtenverlauf auftritt
             {
-                Thread.Sleep(1000);             //lässt Thread warten
-                SetNachrichtenVerlauf(input+"\n");  //ruft Methode der View auf und übergibt string
+                //Thread.Sleep(1000);             //lässt Thread warten
+                SetNachrichtenVerlauf(input);  //ruft Methode der View auf und übergibt string
             }
         }
-        
-
-
     }
 }

@@ -33,6 +33,8 @@
             this.Sendebutton = new System.Windows.Forms.Button();
             this.Freundesliste = new System.Windows.Forms.ListBox();
             this.StartListenerButton = new System.Windows.Forms.Button();
+            this.IpTextbox = new System.Windows.Forms.TextBox();
+            this.EmpfeangerIpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Nachrichtenverlauf
@@ -43,7 +45,7 @@
             this.Nachrichtenverlauf.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.Nachrichtenverlauf.Size = new System.Drawing.Size(460, 240);
             this.Nachrichtenverlauf.TabIndex = 0;
-            this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)\n";
+            this.Nachrichtenverlauf.Text = "Herzlich Willkommen in der ChatApp!! ;-)\n\nBitte Starten Sie den Listener mit dem Button weiter unten!\n\nZur Vertestung bitte in das Empfänger-Ip Feld 127.0.0.1 eintragen!\nBei doppelter Nachricht mit unterschiedlichem Zeitstempel erfolgreich!\n";
             // 
             // Eingabefeld
             // 
@@ -83,11 +85,29 @@
             this.StartListenerButton.UseVisualStyleBackColor = true;
             this.StartListenerButton.Click += new System.EventHandler(this.StartListener_Click);
             // 
+            // IpTextbox
+            // 
+            this.IpTextbox.Location = new System.Drawing.Point(209, 266);
+            this.IpTextbox.Name = "IpTextbox";
+            this.IpTextbox.Size = new System.Drawing.Size(100, 20);
+            this.IpTextbox.TabIndex = 5;
+            // 
+            // EmpfeangerIpLabel
+            // 
+            this.EmpfeangerIpLabel.AutoSize = true;
+            this.EmpfeangerIpLabel.Location = new System.Drawing.Point(133, 269);
+            this.EmpfeangerIpLabel.Name = "EmpfeangerIpLabel";
+            this.EmpfeangerIpLabel.Size = new System.Drawing.Size(82, 13);
+            this.EmpfeangerIpLabel.TabIndex = 6;
+            this.EmpfeangerIpLabel.Text = "Empfänger- Ip : ";
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 359);
+            this.Controls.Add(this.EmpfeangerIpLabel);
+            this.Controls.Add(this.IpTextbox);
             this.Controls.Add(this.StartListenerButton);
             this.Controls.Add(this.Freundesliste);
             this.Controls.Add(this.Sendebutton);
@@ -95,8 +115,8 @@
             this.Controls.Add(this.Nachrichtenverlauf);
             this.Name = "View";
             this.Text = "ChatApp";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +127,8 @@
         private System.Windows.Forms.Button Sendebutton;
         private System.Windows.Forms.ListBox Freundesliste;
         private System.Windows.Forms.Button StartListenerButton;
+        private System.Windows.Forms.TextBox IpTextbox;
+        private System.Windows.Forms.Label EmpfeangerIpLabel;
     }
 }
 

@@ -34,6 +34,7 @@
             this.PasswortLoginLabel = new System.Windows.Forms.Label();
             this.SendeLoginButton = new System.Windows.Forms.Button();
             this.SendeRegistrierungButton = new System.Windows.Forms.Button();
+            this.HinweisRichTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // BenutzernameTextbox
@@ -74,7 +75,7 @@
             // 
             // SendeLoginButton
             // 
-            this.SendeLoginButton.Location = new System.Drawing.Point(164, 111);
+            this.SendeLoginButton.Location = new System.Drawing.Point(164, 101);
             this.SendeLoginButton.Name = "SendeLoginButton";
             this.SendeLoginButton.Size = new System.Drawing.Size(75, 23);
             this.SendeLoginButton.TabIndex = 4;
@@ -84,7 +85,7 @@
             // 
             // SendeRegistrierungButton
             // 
-            this.SendeRegistrierungButton.Location = new System.Drawing.Point(47, 111);
+            this.SendeRegistrierungButton.Location = new System.Drawing.Point(47, 101);
             this.SendeRegistrierungButton.Name = "SendeRegistrierungButton";
             this.SendeRegistrierungButton.Size = new System.Drawing.Size(75, 23);
             this.SendeRegistrierungButton.TabIndex = 5;
@@ -92,11 +93,20 @@
             this.SendeRegistrierungButton.UseVisualStyleBackColor = true;
             this.SendeRegistrierungButton.Click += new System.EventHandler(this.SendeRegistrierungButton_Click);
             // 
+            // HinweisRichTextBox
+            // 
+            this.HinweisRichTextBox.Location = new System.Drawing.Point(47, 130);
+            this.HinweisRichTextBox.Name = "HinweisRichTextBox";
+            this.HinweisRichTextBox.Size = new System.Drawing.Size(192, 92);
+            this.HinweisRichTextBox.TabIndex = 6;
+            this.HinweisRichTextBox.Text = "Hinweis:\nBei erster Benutzung bitte User mit Passwort Registrieren!\nAnschließend reicht Login mit Username und Passwort!";
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 159);
+            this.ClientSize = new System.Drawing.Size(284, 234);
+            this.Controls.Add(this.HinweisRichTextBox);
             this.Controls.Add(this.SendeRegistrierungButton);
             this.Controls.Add(this.SendeLoginButton);
             this.Controls.Add(this.PasswortLoginLabel);
@@ -118,5 +128,6 @@
         private System.Windows.Forms.Label PasswortLoginLabel;
         private System.Windows.Forms.Button SendeLoginButton;
         private System.Windows.Forms.Button SendeRegistrierungButton;
+        private System.Windows.Forms.RichTextBox HinweisRichTextBox;
     }
 }

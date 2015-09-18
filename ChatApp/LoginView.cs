@@ -30,7 +30,15 @@ namespace ChatApp
 
         private void SendeLoginButton_Click(object sender, EventArgs e)
         {
-            DelegateLoginViewHasChanged(this.BenutzernameTextbox.Text, this.PasswortTextbox.Text, true);
+            if (DelegateLoginViewHasChanged(this.BenutzernameTextbox.Text, this.PasswortTextbox.Text, true))
+            {
+                delegateLoginAccept();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Username und/oder Passwort falsch!\nBitte erneut versuchen.");
+            }
         }
 
         private void SendeRegistrierungButton_Click(object sender, EventArgs e)
